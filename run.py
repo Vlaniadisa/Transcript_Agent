@@ -1,15 +1,16 @@
 import os
 from src.transcriber import AudioTranscriber
-from config import OPENAI_API_KEY
+from config import OPENAI_API_KEY, ASSEMBLYAI_API_KEY
 
 def main():
-    print("=== Starting Transcription Process ===")
+    print("Starting transcription process...")
     
     # Initialize the transcriber
-    transcriber = AudioTranscriber(OPENAI_API_KEY)
+    transcriber = AudioTranscriber(OPENAI_API_KEY, ASSEMBLYAI_API_KEY)
     
     # Audio file path
     audio_file_path = r"D:\02-consolidated.wav"  # Update this path
+    print(f"Processing audio file: {audio_file_path}")
     
     try:
         # Verify file exists
@@ -25,7 +26,10 @@ def main():
         
         # Print preview
         print("\nTranscription preview:")
-        print(result["text"][:500] + "...")
+        segments = result["segments"][:3]  # First 3 segments
+        for segment in segments:
+            print(f"\n{segment['speaker']} ({segment['start']:.1f}s - {segment['end']:.1f}s):")
+            print(f"  {segment['text']}")
             
     except Exception as e:
         print(f"An error occurred: {str(e)}")

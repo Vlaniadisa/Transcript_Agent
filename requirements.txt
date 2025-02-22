@@ -13,4 +13,5 @@ torchaudio>=2.1.0
 numpy>=1.26.0
 
 # Fast downloads
-hf_transfer>=0.1.3 
+hf_transfer>=0.1.3
+requests>=2.31.0 
