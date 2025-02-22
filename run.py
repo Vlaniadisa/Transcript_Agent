@@ -9,7 +9,7 @@ def main():
     transcriber = AudioTranscriber(OPENAI_API_KEY, ASSEMBLYAI_API_KEY)
     
     # Audio file path
-    audio_file_path = r"D:\02-consolidated.wav"  # Update this path
+    audio_file_path = r"Your\audio\file.mp3"  # Update this path
     print(f"Processing audio file: {audio_file_path}")
     
     try:
