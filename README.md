@@ -33,7 +33,7 @@ uv pip install -r requirements.txt
 
 ## Configuration
 
-1. Create a `config.py` file in the root directory
+1. Create a `.env` file in the root directory
 2. Add your API keys:
 
 ```python
